@@ -151,8 +151,8 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b ${{env.REPO_BRANCH}} openwrt
-        git clone ${{ secrets.URL }} lede
-        cp -Rf ./lede/* openwrt
+        #git clone ${{ secrets.URL }} lede
+        #cp -Rf ./lede/* openwrt
         ln -sf /builder/openwrt $GITHUB_WORKSPACE/openwrt
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
